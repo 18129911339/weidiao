@@ -59,7 +59,7 @@ import static com.weidiao.print.activity.MainActivity.mSelectedAddress;
 public class SearchBlueActivity extends BaseActivity implements View.OnClickListener{
 
     static {
-        OpenCVLoader.initDebug();
+//        OpenCVLoader.initDebug();
         System.loadLibrary("opencv");
     }
     private static final String TAG = "SearchBlueActivity";

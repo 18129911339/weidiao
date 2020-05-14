@@ -25,7 +25,6 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.ble.api.DataUtil;
 import com.ble.ble.BleService;
 import com.ble.ble.scan.LeScanResult;
 import com.ble.ble.scan.LeScanner;
@@ -35,14 +34,13 @@ import com.weidiao.print.R;
 import com.weidiao.print.ble.LeDevice;
 import com.weidiao.print.ble.LeProxy;
 import com.weidiao.print.util.AppActivityManager;
-import com.weidiao.print.util.HexUtil;
 import com.weidiao.print.util.LogUtil;
-
-import org.opencv.android.OpenCVLoader;
 
 import java.util.ArrayList;
 
 import static com.weidiao.print.activity.MainActivity.mSelectedAddress;
+
+//import org.opencv.android.OpenCVLoader;
 
 /**
  * Created by shcx on 2019/12/3.
@@ -62,7 +60,7 @@ public class BlueListActivity extends BaseActivity {
 
     private LeProxy mLeProxy = LeProxy.getInstance();
 
-    private String base_name = "LaserCube" ;
+    private String base_name = "LaserCube";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -74,7 +72,7 @@ public class BlueListActivity extends BaseActivity {
         LocalBroadcastManager.getInstance(this).registerReceiver(mLocalReceiver, makeFilter());
     }
 
-    private void initView(){
+    private void initView() {
         findViewById(R.id.btn_fresh).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -93,7 +91,7 @@ public class BlueListActivity extends BaseActivity {
         listView.setOnItemClickListener(mOnItemClickListener);
     }
 
-    private void fresh(){
+    private void fresh() {
         leDeviceListAdapter.clear();
         LeScanner.startScan(mOnLeScanListener);
     }
@@ -110,8 +108,6 @@ public class BlueListActivity extends BaseActivity {
 
         }
     };
-
-
 
 
     private IntentFilter makeFilter() {
@@ -153,9 +149,9 @@ public class BlueListActivity extends BaseActivity {
         }
     };
 
-    private void jumpMainActivity( String address){
-        Intent intent = new Intent(BlueListActivity.this,MainActivity.class);
-        intent.putExtra("address",address);
+    private void jumpMainActivity(String address) {
+        Intent intent = new Intent(BlueListActivity.this, MainActivity.class);
+        intent.putExtra("address", address);
         startActivity(intent);
     }
 
@@ -180,7 +176,7 @@ public class BlueListActivity extends BaseActivity {
         if (!BluetoothAdapter.getDefaultAdapter().isEnabled()) {
             //申请打开手机蓝牙，requestCode为LeScanner.REQUEST_ENABLE_BT
             LeScanner.requestEnableBluetooth(this);
-        }else{
+        } else {
             if (Build.VERSION.SDK_INT >= 23) {
                 //TODO Android6.0开始，扫描是个麻烦事，得检测APP有没有定位权限，手机定位有没有开启
                 if (!LeScanner.hasFineLocationPermission(this)) {
@@ -236,7 +232,7 @@ public class BlueListActivity extends BaseActivity {
         @Override
         public void onLeScan(LeScanResult leScanResult) {
             BluetoothDevice device = leScanResult.getDevice();
-            if(TextUtils.isEmpty(device.getName()))return;
+            if (TextUtils.isEmpty(device.getName())) return;
             Message msg = new Message();
             msg.what = MSG_SCAN_DEVICE;
             msg.obj = new LeDevice(
@@ -259,11 +255,11 @@ public class BlueListActivity extends BaseActivity {
     };
 
 
-    public class MyHandler extends Handler{
+    public class MyHandler extends Handler {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            switch (msg.what){
+            switch (msg.what) {
                 case MSG_SCAN_STARTED:
 //                    fragment.mRefreshLayout.setRefreshing(true);
                     break;
@@ -302,7 +298,6 @@ public class BlueListActivity extends BaseActivity {
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
-
 
 
     private class LeDeviceListAdapter extends BaseAdapter {
@@ -353,17 +348,17 @@ public class BlueListActivity extends BaseActivity {
 
             LeDevice device = mLeDevices.get(i);
             String deviceName = device.getName();
-            if (!TextUtils.isEmpty(deviceName)){
-                if(device.getName().contains("BLE")){
-                    LogUtil.d("device.getName()",device.getName());
-                    if(!device.getName().contains(base_name)){
-                        device.setName(base_name+"_"+device.getName());
+            if (!TextUtils.isEmpty(deviceName)) {
+                if (device.getName().contains("BLE")) {
+                    LogUtil.d("device.getName()", device.getName());
+                    if (!device.getName().contains(base_name)) {
+                        device.setName(base_name + "_" + device.getName());
                     }
                     viewHolder.deviceName.setText(device.getName());
-                }else{
+                } else {
                     viewHolder.deviceName.setText(deviceName);
                 }
-            } else{
+            } else {
                 viewHolder.deviceName.setText(R.string.unknown_device);
             }
             viewHolder.deviceAddress.setText(device.getAddress());

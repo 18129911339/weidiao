@@ -23,6 +23,7 @@ import com.weidiao.print.util.AppActivityManager;
 import com.weidiao.print.util.FileUtil;
 import com.weidiao.print.util.ToastUtil;
 
+
 import org.opencv.android.OpenCVLoader;
 
 import java.util.ArrayList;
