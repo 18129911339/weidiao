@@ -1,0 +1,13 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.fjnu.edu.paint" >
+
+    <application
+        android:allowBackup="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="cn.fjnu.edu.ui.activity.PaintMainActivity"
+            android:screenOrientation="portrait">
+        </activity>
+    </application>
+</manifest>

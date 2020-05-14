@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/list_bg"
+   >
+
+    <include layout="@layout/include_title_bar"/>
+
+  <ImageView
+      android:id="@+id/imageView"
+      android:layout_width="match_parent"
+      android:layout_height="300dp"
+      android:src="@mipmap/ic_default"
+      android:scaleType="fitCenter"
+      />
+
+
+
+
+    <LinearLayout
+        android:id="@+id/ll_w1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tv_set_dec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/color_text"
+            android:textSize="14sp"
+            android:text="雕刻面积：50mm,材料：木制,雕刻深度：30%"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/color_bg"
+            android:layout_marginTop="20dp"
+            android:textSize="14sp"
+            android:text="请勿移动设备,雕刻中..."/>
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            android:max="100"
+            android:layout_marginTop="20dp"
+            android:progress="10"
+            android:minHeight="3dp"
+            android:progressDrawable="@drawable/progressbar_style"
+            />
+        <TextView
+            android:id="@+id/tv_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/color_bg"
+            android:layout_marginTop="10dp"
+            android:textSize="14sp"
+            android:text="0%"/>
+        <Chronometer
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/color_bg"
+            android:layout_marginTop="30dp"
+            android:format="%s" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/btn_left"
+                android:layout_width="120dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="40dp"
+                android:background="@drawable/shape_btn_bg"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:text="@string/working_pause"/>
+
+            <TextView
+                android:id="@+id/btn_right"
+                android:layout_width="120dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="40dp"
+                android:layout_marginLeft="45dp"
+                android:background="@drawable/shape_btn_bg"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:text="@string/working_stop"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_w2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:visibility="gone"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/color_bg"
+            android:layout_marginTop="20dp"
+            android:textSize="14sp"
+            android:text="恭喜！雕刻成功"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/btn_new"
+                android:layout_width="120dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="40dp"
+                android:background="@drawable/shape_btn_bg"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:text="全新雕刻"/>
+
+            <TextView
+                android:id="@+id/btn_again"
+                android:layout_width="120dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="40dp"
+                android:layout_marginLeft="45dp"
+                android:background="@drawable/shape_btn_bg"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:text="原图雕刻"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

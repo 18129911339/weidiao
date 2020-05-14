@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">LaserCube</string>
+
+    <string name="home">主页</string>
+    <string name="camera">拍照</string>
+    <string name="photo">图库</string>
+    <string name="drawing">创作</string>
+    <string name="material">素材</string>
+
+    <string name="unknown_device">Unknown device</string>
+    <string name="mtu_no_device_connected">未连接设备</string>
+
+    <string name="scan_tips_location_service_disabled">手机定位没打开，无法扫描设备</string>
+    <string name="scan_tips_no_location_permission">未获得位置权限，无法扫描设备</string>
+    <string name="no_read_external_storage_permission">加载本地文件需要读写手机存储的权限</string>
+    <string name="to_grant_permission">去授权</string>
+    <string name="to_enable">开启</string>
+    <string name="no_camera_permission">权限被禁止，无法打开相机</string>
+    <string name="exit_app">再按一次退出程序</string>
+
+    <!-- 扫描LE -->
+    <string name="scan_connected">已连接</string>
+    <string name="scan_disconnected">已断开</string>
+    <string name="scan_connect_timeout">连接超时</string>
+    <string name="scan_connection_error">连接异常</string>
+    <string name="scan_bt_disabled">蓝牙未打开</string>
+
+    <string name="stop_work_dec">是否要停止雕刻？</string>
+    <string name="pause_work_dec">是否要暂停雕刻？</string>
+
+    <!-- 工作状态 -->
+    <string name="working_title">工作状态</string>
+    <string name="working_start">开始雕刻</string>
+    <string name="working_pause">暂停雕刻</string>
+    <string name="working_stop">结束镭雕</string>
+    <!--<string name="working_state_stop">设备空闲</string>-->
+
+
+    <!-- 雕刻预览 -->
+    <string name="carving_preview">雕刻预览</string>
+    <string name="next">下一步</string>
+    <string name="start_preview">开始预览</string>
+
+    <!-- 上传 -->
+    <string name="upload">上传</string>
+    <string name="cancel_upload">取消传输</string>
+
+
+    <!-- 设置 -->
+    <string name="setting">设置</string>
+
+    <!-- 图片处理 -->
+    <string name="image_process">图片处理</string>
+</resources>

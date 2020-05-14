@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:zhangym="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="40dp" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_round_bg"
+        android:padding="10dp"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:src="@mipmap/img_dialog_notice"/>
+
+            <TextView
+                android:id="@+id/tv_dec"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="长时间看激光对用眼睛有害，\n安全起见，请您戴上护目镜。"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+
+
+            <com.weidiao.print.view.VerificationCodeView
+                android:id="@+id/verificationCodeView"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_weight="1"
+                zhangym:interferenceCirclesCount="40"
+                zhangym:interferenceCirclesRadius="5"
+                zhangym:interferenceLinesCount="3"
+                zhangym:isShowInterferenceCircles="true"
+                zhangym:isShowInterferenceLines="false"
+                zhangym:isTextBold="false"
+                zhangym:textSize="60sp"
+                zhangym:textSkewX="0"
+                zhangym:verificationText="9327" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:visibility="visible"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/color_line" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="输入上图安全码"
+                android:textColor="@color/color_bg"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/et_verification"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:inputType="number"
+                android:layout_weight="1"
+                android:textSize="16sp" />
+
+
+            <TextView
+                android:id="@+id/tv_ok"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:gravity="center"
+                android:background="@drawable/shape_btn_bg"
+                android:text="确认"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

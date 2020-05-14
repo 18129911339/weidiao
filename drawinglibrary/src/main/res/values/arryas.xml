@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="desnames">
+        <item>与众不同的绘画软件</item>
+        <item>随时随地记录生活的点点滴滴</item>
+        <item>茶余饭后，一篇美文，净化心灵</item>
+    </string-array>
+    <string-array name="appnames">
+        <item>涂鸦画图</item>
+        <item>美文集</item>
+    </string-array>
+    <string-array name="packagenames">
+        <item>cn.fjnu.edu.paint</item>
+        <item>com.fju.zqc.fjuzqcgradutation</item>
+    </string-array>
+    <string-array name="downloadURL">
+        <item>http://openbox.mobilem.360.cn/index/d/sid/1928844</item>
+        <item>http://openbox.mobilem.360.cn/index/d/sid/3278030</item>
+    </string-array>
+</resources>

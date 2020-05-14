@@ -1,0 +1,324 @@
+
+
+<cn.fjnu.edu.paint.ui.EXRelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="#ffffff"
+	android:id="@+id/rlay">
+	<RelativeLayout
+		android:id="@+id/rl_title"
+		android:layout_width="match_parent"
+		android:layout_height="45dp"
+		android:background="#699361"
+		android:clickable="true">
+
+		<ImageView
+			android:id="@+id/btn_back"
+			android:layout_width="48dp"
+			android:layout_height="match_parent"
+			android:layout_centerVertical="true"
+			android:padding="12dp"
+			android:src="@drawable/img_back" />
+
+
+		<TextView
+			android:id="@+id/tv_title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			android:layout_marginLeft="12dp"
+			android:textSize="18sp"
+			android:text="创作"
+			android:textColor="#ffffff" />
+
+		<TextView
+			android:id="@+id/btn_ok"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"
+			android:layout_centerVertical="true"
+			android:layout_marginLeft="8dp"
+			android:layout_marginRight="8dp"
+			android:text="确定"
+			android:paddingRight="16.0dp"
+			android:visibility="gone"
+			android:paddingLeft="16.0dp"
+			android:textColor="#ffffff"
+			android:textSize="14sp" />
+
+	</RelativeLayout>
+
+	<RelativeLayout
+		android:id="@+id/rl_select"
+		android:layout_width="match_parent"
+		android:layout_below="@id/rl_title"
+		android:layout_height="45dp">
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:layout_centerInParent="true"
+			android:gravity="center_vertical"
+			android:orientation="horizontal">
+			<TextView
+				android:id="@+id/tv1"
+				android:layout_width="wrap_content"
+				android:text="文本"
+				android:textColor="@drawable/selector_btn_text"
+				android:textSize="18sp"
+				android:layout_height="wrap_content" />
+			<ImageView
+				android:layout_width="1dp"
+				android:layout_height="match_parent"
+				android:layout_margin="10dp"
+				android:background="@color/color_bg"
+				/>
+			<TextView
+				android:id="@+id/tv2"
+				android:layout_width="wrap_content"
+				android:text="绘图"
+				android:textColor="@drawable/selector_btn_text"
+				android:textSize="18sp"
+				android:layout_height="wrap_content" />
+		</LinearLayout>
+
+	</RelativeLayout>
+	<RelativeLayout
+		android:id="@+id/rl_draw"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_below="@id/rl_select"
+		android:visibility="gone"
+		android:orientation="vertical">
+
+
+	<cn.fjnu.edu.paint.ui.DrawScrollView
+	    android:scrollbarSize="10dp"
+	    android:id="@+id/scrollview"
+	    android:fillViewport="true"
+        android:layout_width="match_parent"
+		android:layout_marginBottom="50dp"
+        android:layout_height="match_parent">
+        <cn.fjnu.edu.paint.ui.DrawHorizontalViw
+            android:scrollbarSize="10dp"
+            android:id="@+id/horizontalscroll"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:fillViewport="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <LinearLayout 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+				<cn.fjnu.edu.paint.engine.DrawView
+					android:id="@+id/img_canvans"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:background="#ffffff"
+					android:contentDescription="@string/canvansimg"
+					android:scaleType="fitXY" />
+			</LinearLayout>
+		</cn.fjnu.edu.paint.ui.DrawHorizontalViw>
+    </cn.fjnu.edu.paint.ui.DrawScrollView>
+	 	  <ZoomControls
+	         android:id="@+id/zoom_control"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:layout_centerHorizontal="true"
+	         android:layout_alignParentBottom="true"
+	         android:layout_marginBottom="60dp"
+	         />
+
+	<ImageView
+		android:id="@+id/img_show_op"
+		android:layout_alignParentRight="true"
+		android:layout_alignParentEnd="true"
+		android:layout_alignParentBottom="true"
+		android:layout_margin="24dp"
+		android:layout_width="50dp"
+		android:layout_height="50dp"
+		android:src="@drawable/show_op"
+		android:visibility="gone"
+		android:scaleType="centerInside"/>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="50dp"
+		android:layout_alignParentBottom="true"
+		android:gravity="center_vertical"
+		android:background="#ffffff"
+		android:orientation="horizontal">
+
+		<ImageView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:id="@+id/clear"
+			android:src="@drawable/img_delete"
+			/>
+		<ImageView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:id="@+id/undo"
+			android:src="@drawable/img_undo"
+			/>
+		<ImageView
+			android:id="@+id/reply"
+			android:src="@drawable/img_reply"
+			android:layout_weight="1"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			/>
+
+		<ImageView
+			android:id="@+id/save"
+			android:src="@drawable/img_save"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:padding="12dp"
+			/>
+	</LinearLayout>
+	</RelativeLayout>
+
+	<RelativeLayout
+		android:id="@+id/rl_text"
+		android:layout_width="match_parent"
+		android:layout_below="@id/rl_select"
+		android:layout_height="match_parent">
+		<LinearLayout
+			android:id="@+id/ll_image"
+			android:layout_width="match_parent"
+			android:background="#ffffff"
+			android:layout_height="300dp">
+			<EditText
+				android:id="@+id/edit_text"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_centerHorizontal="true"
+				android:layout_margin="35dp"
+				android:textSize="40sp"
+				android:maxLength="50"
+				android:background="@null"
+				android:hint="请双击输入内容"/>
+		</LinearLayout>
+
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:orientation="vertical"
+			android:layout_alignParentBottom="true"
+			android:layout_marginBottom="50dp"
+			android:layout_height="wrap_content">
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:orientation="horizontal"
+				android:padding="20dp"
+				android:layout_height="wrap_content">
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textSize="18sp"
+					android:layout_marginRight="30dp"
+					android:layout_marginLeft="20dp"
+					android:gravity="center"
+					android:text="类型"/>
+				<TextView
+					android:id="@+id/tv_type1"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textSize="14sp"
+					android:layout_weight="1"
+					android:gravity="center"
+					android:drawableTop="@drawable/selector_draw_type1"
+					android:textColor="@drawable/selector_btn_text"
+					android:drawablePadding="5dp"
+					android:text="实心"/>
+				<TextView
+					android:id="@+id/tv_type2"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textSize="14sp"
+					android:layout_weight="1"
+					android:gravity="center"
+					android:drawablePadding="5dp"
+					android:drawableTop="@drawable/selector_draw_type2"
+					android:textColor="@drawable/selector_btn_text"
+					android:text="镂空"/>
+				<TextView
+					android:id="@+id/tv_type3"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textSize="14sp"
+					android:drawableTop="@drawable/selector_draw_type3"
+					android:textColor="@drawable/selector_btn_text"
+					android:gravity="center"
+					android:drawablePadding="5dp"
+					android:layout_weight="1"
+					android:text="倾斜"/>
+
+			</LinearLayout>
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:orientation="horizontal"
+				android:paddingLeft="20dp"
+				android:paddingRight="20dp"
+				android:gravity="center_vertical"
+				android:layout_gravity="center_vertical"
+				android:layout_height="wrap_content">
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textSize="18sp"
+					android:gravity="center"
+					android:layout_marginLeft="20dp"
+					android:layout_marginRight="30dp"
+					android:text="对齐"/>
+				<ImageView
+					android:id="@+id/tv_gravity1"
+					android:layout_width="25dp"
+					android:layout_height="25dp"
+					android:layout_weight="1"
+					android:gravity="center"
+					android:padding="5dp"
+					android:src="@drawable/selector_draw_type4"
+					/>
+				<ImageView
+					android:id="@+id/tv_gravity2"
+					android:layout_width="25dp"
+					android:layout_height="25dp"
+					android:layout_weight="1"
+					android:gravity="center"
+					android:padding="5dp"
+					android:src="@drawable/selector_draw_type5"
+					/>
+				<ImageView
+					android:id="@+id/tv_gravity3"
+					android:layout_width="25dp"
+					android:layout_height="25dp"
+					android:layout_weight="1"
+					android:gravity="center"
+					android:padding="5dp"
+					android:src="@drawable/selector_draw_type6"
+					/>
+
+			</LinearLayout>
+
+			<ImageView
+				android:id="@+id/img_ok"
+				android:layout_width="25dp"
+				android:layout_height="25dp"
+				android:layout_gravity="right"
+				android:layout_marginTop="20dp"
+				android:layout_marginRight="45dp"
+				android:src="@drawable/img_draw7"/>
+
+
+		</LinearLayout>
+
+
+	</RelativeLayout>
+</cn.fjnu.edu.paint.ui.EXRelativeLayout>

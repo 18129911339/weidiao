@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <EditText
+        android:id="@+id/edit_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_special_text"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_size"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp" />
+
+    <SeekBar
+        android:id="@+id/sb_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:animationResolution="100"
+        android:progress="16"
+        android:layout_marginTop="10dp"/>
+
+    <cn.fjnu.edu.paint.view.PaintTextView
+        android:id="@+id/ptv"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+        <Button
+            android:background="@drawable/color_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_ok"
+            android:layout_weight="1"
+            android:id="@+id/btn_ok"/>
+        <Button
+            android:background="@drawable/color_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_cancel"
+            android:layout_weight="1"
+            android:id="@+id/btn_cancel"/>
+    </LinearLayout>
+</LinearLayout>

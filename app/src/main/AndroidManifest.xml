@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.weidiao.print">
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <!-- Android5.0开始，扫描蓝牙设备需要位置权限，且部分手机还必须是精准定位权限 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+
+    <application android:name=".MyAppliacation"
+        android:allowBackup="true"
+        android:icon="@mipmap/app_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/app_logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".activity.SearchBlueActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activity.GuideActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".activity.MainActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".activity.MaterialListActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".activity.MeterialImageCropActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".activity.ImageProcessingActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".activity.CarvingSetActivity"
+        android:screenOrientation="portrait"
+        />
+        <activity android:name=".activity.CarvingPreviewActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".activity.UploadActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".activity.WorkingActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".activity.SettingActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".activity.AboutActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".activity.ContactActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".activity.BlueListActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".activity.NoticeActivity"
+            android:screenOrientation="portrait"
+            />
+
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.weidiao.print.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <service
+            android:name="com.ble.ble.BleService"
+            android:enabled="true"
+            android:exported="false" />
+    </application>
+
+</manifest>

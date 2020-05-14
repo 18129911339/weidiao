@@ -1,0 +1,41 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="cn.fjnu.edu.paint.MainActivity">
+
+    <item
+        android:id="@+id/undo"
+        android:icon="@drawable/undo"
+        app:showAsAction="always"
+        android:title="@string/undo"/>
+    <item
+        android:id="@+id/reply"
+        android:icon="@drawable/reply"
+        app:showAsAction="always"
+        android:title="@string/reply"/>
+
+    <item
+        android:id="@+id/save"
+        android:icon="@drawable/save"
+        app:showAsAction="always"
+        android:title="@string/save"/>
+
+    <item
+        android:id="@+id/share"
+        android:icon="@drawable/share"
+        app:showAsAction="ifRoom"
+        android:title="@string/share"/>
+
+    <item
+        android:id="@+id/closecolor"
+        app:showAsAction="ifRoom"
+        android:title="@string/fillcolor"/>
+    <item
+        android:id="@+id/areaselect"
+        app:showAsAction="ifRoom"
+        android:title="@string/areaselect"/>
+  <!--  <item
+        android:id="@+id/moreapp"
+        app:showAsAction="ifRoom"
+        android:title="@string/apprecom"/>-->
+</menu>
