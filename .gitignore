@@ -7,3 +7,5 @@
 /build
 /captures
 .externalNativeBuild
+/bannerlibrary/build
+/openCVLibrary340/build
