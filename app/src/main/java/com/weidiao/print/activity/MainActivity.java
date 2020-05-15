@@ -29,7 +29,6 @@ import org.opencv.android.OpenCVLoader;
 import java.util.ArrayList;
 
 import cn.fjnu.edu.ui.activity.PaintMainActivity;
-import de.greenrobot.event.EventBus;
 
 
 public class MainActivity extends BaseActivity {
@@ -63,7 +62,6 @@ public class MainActivity extends BaseActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, PERMISSION_REQUEST_COARSE_LOCATION);
         }
-        EventBus.getDefault().register(this);
     }
 
     private void initView(){
@@ -200,7 +198,6 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        EventBus.getDefault().unregister(this);
     }
 
 
